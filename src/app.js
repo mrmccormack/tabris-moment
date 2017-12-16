@@ -31,7 +31,7 @@ button.on('select', () => {
   textViewTime.text = TIME;
 });
 
-
+// this will PREVENT a date selection before or after 5 days
 const FIVE_DAYS = 432000000;
 
 new Button({
@@ -49,10 +49,12 @@ function showDateDialog() {
   let date = new Date();
   new DateDialog({
     date: date,
-    minDate: new Date(date.getTime() - FIVE_DAYS),
-    maxDate: new Date(date.getTime() + FIVE_DAYS)
+    // minDate: new Date(date.getTime() - FIVE_DAYS),
+    // maxDate: new Date(date.getTime() + FIVE_DAYS)
   }).on({
-    select: ({date}) => selectionTextView.text = date,
+    // select: ({date}) => selectionTextView.text = date,
+
+    select: ({date}) => selectionTextView.text = 'The date you picked is: \n' + moment(date).fromNow(),
     close: () => console.log('DateDialog closed')
   }).open();
 }
