@@ -1,0 +1,17 @@
+{
+  "name": "tabris-moment",
+  "version": "0.1.0",
+  "main": "src/app.js",
+  "private": true,
+  "scripts": {
+    "test": "eslint .",
+    "start": "tabris serve"
+  },
+  "dependencies": {
+    "moment": "^2.19.4",
+    "tabris": "^2.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.13.1"
+  }
+}
